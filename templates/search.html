@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://css.gg/css?=" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        h1 {
+            font-weight: bolder;
+            color: white;
+        }
+
+        h2 {
+            font-weight: bolder;
+            color: white;
+        }
+
+        p {
+            font-size: 15px;
+            opacity: 70%;
+        }
+
+        .card-body1 {
+            padding: 50px;
+        }
+
+        .card {
+            border: 0 !important;
+        }
+
+        @media (max-width:961px) {
+            .fff {
+                flex-direction: column;
+                margin: 7%;
+            }
+
+            .dfdf {
+                width: 80% !important;
+                margin-left: 10% !important;
+                margin-right: 10% !important;
+            }
+        }
+
+        .padding20 {
+            padding: 20px;
+        }
+
+        svg {
+            margin-bottom: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--ХЕДЕР-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top">
+        <div class="container justify-content-center">
+            <a class="navbar-brand" href="{{ url_for('router', to='index') }}">UDP&nbsp;Express</a>
+            <div class="collapse navbar-collapse justify-content-center" id="navbar1">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('router', to='index') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('router', to='services') }}">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('router', to ='logistics') }}">Logistics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('router', to = 'contacts') }}">Contacts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('router', to='about') }}">About us</a>
+                    </li>
+                </ul>
+            </div>
+            <div style="display: flex; justify-content: center; align-items: center; text-align: center;">
+                <a class="nav-link text-decoration-none text-light">support@udp-express.com</a>
+            </div>
+
+            <!-- Burger button -->
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbar1"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+                    class="navbar-toggler-icon"></span></button>
+
+        </div>
+    </nav>
+    <!--КОНЕЦ ХЕДЕРА-->
+    <div
+        style="background-image: url(static/image/img.png); width: 100%; height: 300px; overflow: hidden; display: flex; align-items: center; position: relative;">
+        <div
+            style="display:flex; margin: auto; text-align: center; justify-content: space-around; flex-direction: column;">
+            <h1>OUR <span style="color:#0d6efd!important">SHIPPING</span> SERVICE</h1>
+            <h2>YOUR PATH TO PEACE OF MIND</h2>
+            <div class="input-group" style="margin-top: 20px;">
+                <form class="input-group" style="margin-top: 20px;" action="{{ url_for('search') }}" method="POST">
+                    <input type="search" class="form-control rounded" name="track" placeholder="Your Track Number"
+                        aria-label="Search" aria-describedby="search-addon" />
+                    <button type="submit" class="btn btn-primary">search</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <!--КАРОЧЕ ЕСЛИ ТРЕК НЕ НАЙДЕН ВОЗВРАЩАЙ ЭТУ ЧАСТЬ-->
+    <!--КАРОЧЕ ЕСЛИ ТРЕК НЕ НАЙДЕН ВОЗВРАЩАЙ ЭТУ ЧАСТЬ-->
+    <!--КАРОЧЕ ЕСЛИ ТРЕК НЕ НАЙДЕН ВОЗВРАЩАЙ ЭТУ ЧАСТЬ-->
+    <!--КАРОЧЕ ЕСЛИ ТРЕК НЕ НАЙДЕН ВОЗВРАЩАЙ ЭТУ ЧАСТЬ-->
+    <!--КАРОЧЕ ЕСЛИ ТРЕК НЕ НАЙДЕН ВОЗВРАЩАЙ ЭТУ ЧАСТЬ-->
+
+    {% if data == 'None' %}
+    <div style="width:80%; margin: 5% 10%">
+        <h3>We could not find your track number, check the correctness of the data entered</h3>
+    </div>
+    {% else %}
+    {% endif %}
+    {% if data != 'None' %}
+    <!--А ЕСЛИ ВСЕ ПИЗДЕЦ АХУЕННО, ТО ВОЗВРАЩАЙ ЭТО!!!!! ТОК ПУСТЬ ДАННЫЕ ПОДСТАВЯТСЯ-->
+    <!--А ЕСЛИ ВСЕ ПИЗДЕЦ АХУЕННО, ТО ВОЗВРАЩАЙ ЭТО!!!!! ТОК ПУСТЬ ДАННЫЕ ПОДСТАВЯТСЯ-->
+    <!--А ЕСЛИ ВСЕ ПИЗДЕЦ АХУЕННО, ТО ВОЗВРАЩАЙ ЭТО!!!!! ТОК ПУСТЬ ДАННЫЕ ПОДСТАВЯТСЯ-->
+    <!--А ЕСЛИ ВСЕ ПИЗДЕЦ АХУЕННО, ТО ВОЗВРАЩАЙ ЭТО!!!!! ТОК ПУСТЬ ДАННЫЕ ПОДСТАВЯТСЯ-->
+    <!--А ЕСЛИ ВСЕ ПИЗДЕЦ АХУЕННО, ТО ВОЗВРАЩАЙ ЭТО!!!!! ТОК ПУСТЬ ДАННЫЕ ПОДСТАВЯТСЯ-->
+    <div style="width:40%; margin: 5% 30% 0% 30%; border: 1px solid rgb(211, 211, 211); padding: 30px;" class="dfdf">
+        <h4>Order tracking</h4>
+        <br>
+        <h6>Sender: <span class="sender" style="color:#0d6efd">{{ data['sender'] }}</span></h6>
+        <h6>Receiver: <span class="recevier" style="color:#0d6efd">{{ data['recipient'] }}</span></h6>
+        <h6>Track number: <span class="track" style="color:#0d6efd">{{ data['track_number'] }}</span></h6>
+        <h6>Weight: <span class="track" style="color:#0d6efd">{{ data['weight'] }} kg</span></h6>
+
+    </div>
+    <div style="width:40%; margin: 0% 30% 5% 30%; border: 1px solid rgb(211, 211, 211); padding: 30px;" class="dfdf">
+        <h5>Delivery tracking</h5>
+        <br>
+        <br>
+        <div>
+            <div class="status">
+                <div class="d-flex align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                        class="bi bi-geo-alt" viewBox="0 0 16 16">
+                        <path
+                            d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                        <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                    </svg>
+                    <div style="margin-left: 5%;">
+
+                        <h6>Picked up</h6>
+                        <p>2022-02-17 13:41:55</p>
+
+                    </div>
+                </div>
+                <p style="border-left: 2px solid #000000; margin-left: 16px;">&nbsp;</p>
+            </div>
+            {% endif %}
+                {% for i in ss %}
+                    {% if i.split('|')[1] != data['track']  %}
+                    {% set idate = i.split('|')[0].split(',')[0].split('-') %}
+                    {% set iyear = idate[0] | int  %}
+                    {% set imonthe = idate[1] | int  %}
+                    {% set iday = idate[2] | int  %}
+                    {% set track_date = datetime(iyear, imonthe, iday) %}
+                    {% set today_date = datetime.now() %}
+                        {% if today_date > track_date %}
+                
+                            <div class="status">
+                            <div class="d-flex align-items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-geo"
+                                    viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M8 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.057.09V14l.002.008a.147.147 0 0 0 .016.033.617.617 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.619.619 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411z" />
+                                </svg>
+                                <div style="margin-left: 5%;">
+
+                                    <h6>{{ i.split('|')[1] }}</h6>
+                                    <p>{{ i.split('|')[0] }}</p>
+
+                                </div>
+                            </div>
+                            <p style="border-left: 2px solid #000000; margin-left: 16px;">&nbsp;</p>
+                        </div>
+                        <p>Your order is on the way</p>
+                    {% else %}
+                        {% endif %}
+                        {% endif %}
+                        {% set asd = '123' %}
+
+            {% endfor %}
+            
+        </div>
+        
+    </div>
+    <!--ФУтер начало-->
+    <div class="container" style="margin-top: 100px;">
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="{{ url_for('router', to='index') }}" class="nav-link px-2 text-muted">Home</a></li>
+                <li class="nav-item"><a href="{{ url_for('router', to='services') }}" class="nav-link px-2 text-muted">Services</a></li>
+                <li class="nav-item"><a href="{{ url_for('router', to ='logistics') }}" class="nav-link px-2 text-muted">Logistics</a></li>
+                <li class="nav-item"><a href="{{ url_for('router', to = 'contacts') }}" class="nav-link px-2 text-muted">Contacts</a></li>
+                <li class="nav-item"><a href="{{ url_for('router', to='about') }}" class="nav-link px-2 text-muted">About</a></li>
+            </ul>
+            <p class="text-center text-muted">© 1998-2023 UDP Express, Inc</p>
+        </footer>
+    </div>
+    <!--ФУтер конец-->
+</body>
+
+</html>
