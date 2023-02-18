@@ -4,7 +4,7 @@ from datetime import datetime
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'jkguishgUIHUIHiughduihsUIGHiughSIDGHUs'
-domain = 'http://127.0.0.1:5000'
+domain = 'http://95.163.241.33:5000'
 import aiosqlite
 
 async def conn():
